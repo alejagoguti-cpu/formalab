@@ -100,41 +100,15 @@ a {
 
 .text-link:hover:after,
 .audience a:hover:after,
-.step-link:hover > span:after {
+.step-card:hover > span:after {
   transform: scaleX(1);
 }
 
-.step-link {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.step-link:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  width: 175px;
-  height: 175px;
-  right: -80px;
-  bottom: -120px;
-  border-radius: 50%;
-  background: var(--pink);
-  opacity: 0;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
-  transform: scale(0.2);
-}
-
-.step-link:hover:before {
-  opacity: 1;
-  transform: scale(1.3);
-}
-
-.step-link > span {
+.step-card > span {
   position: relative;
 }
 
-.step-link > span:after {
+.step-card > span:after {
   height: 1px;
   margin-top: 3px;
 }

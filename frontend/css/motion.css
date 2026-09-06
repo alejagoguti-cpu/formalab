@@ -89,77 +89,63 @@
   animation: star-twinkle-spin 14s linear infinite;
 }
 
-/* --- SCROLL REVEAL (STAGGERED) --- */
+/* --- SCROLL REVEAL --- */
 .reveal-section {
   opacity: 0;
-  transform: translateY(48px) scale(0.98);
-  transition: opacity 0.85s var(--ease-smooth), transform 0.85s var(--ease-expo);
+  transform: translateY(32px);
+  transition: opacity 0.75s var(--ease-smooth), transform 0.75s var(--ease-expo);
   will-change: opacity, transform;
 }
 
 .reveal-section.is-visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.step-card {
-  opacity: 0;
-  transform: translateY(32px) scale(0.97);
-  transition: opacity 0.75s var(--ease-smooth), transform 0.75s var(--ease-expo), background-color 0.3s ease, box-shadow 0.35s ease;
-  will-change: opacity, transform;
-}
-
-.step-card.is-visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-.step-card:hover {
-  transform: translateY(-8px) scale(1.015);
-  box-shadow: 0 16px 32px rgba(23, 21, 30, 0.12);
+  transform: translateY(0);
 }
 
 .step-card .icon {
   display: inline-block;
-  transition: transform 0.45s var(--ease-spring);
+  transition: transform 0.4s var(--ease-spring);
 }
 
 .step-card:hover .icon {
-  transform: rotate(24deg) scale(1.22);
+  transform: translateY(-4px) scale(1.15) rotate(10deg);
+}
+
+.step-card > span {
+  transition: transform 0.3s var(--ease-spring);
+}
+
+.step-card:hover > span {
+  transform: translateX(4px);
 }
 
 /* --- CARDS & INTERACTION DYNAMICS --- */
 .challenge-card {
-  transition: transform 0.5s var(--ease-expo), box-shadow 0.5s var(--ease-expo);
+  transition: transform 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo);
   will-change: transform, box-shadow;
 }
 
 .challenge-card:hover {
-  transform: translateY(-10px) rotate(-0.4deg);
-  box-shadow: 16px 18px 0 var(--acid);
+  transform: translateY(-6px);
+  box-shadow: 12px 14px 0 var(--acid);
 }
 
 .challenge-card:hover .abstract-building {
-  transform: skewY(-11deg) translateY(-14px) scale(1.02);
+  transform: skewY(-11deg) translateY(-10px);
 }
 
 .audience {
-  transition: transform 0.45s var(--ease-expo), box-shadow 0.45s var(--ease-expo);
+  transition: transform 0.4s var(--ease-expo), box-shadow 0.4s var(--ease-expo);
   will-change: transform;
 }
 
 .audience:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-}
-
-.audience:hover h2 {
-  animation: subtle-wobble 0.5s var(--ease-spring);
+  transform: translateY(-8px);
 }
 
 /* --- BUTTON INTERACTIONS --- */
 .button {
-  transition: transform 0.3s var(--ease-spring), box-shadow 0.3s var(--ease-spring), background-color 0.25s ease;
+  transition: transform 0.25s var(--ease-spring), box-shadow 0.25s var(--ease-spring), background-color 0.2s ease;
   will-change: transform;
 }
 
