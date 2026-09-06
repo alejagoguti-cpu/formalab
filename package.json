@@ -4,7 +4,9 @@
   "private": true,
   "description": "Landing y prototipo interactivo de Forma Labs.",
   "scripts": {
-    "start": "npx serve .",
+    "start": "node backend/src/server.js",
+    "start:server": "node backend/src/server.js",
+    "start:front": "npx serve .",
     "deploy": "gh-pages -d ."
   }
 }
