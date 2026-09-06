@@ -1,1 +1,507 @@
-.page-shell{min-height:100vh;background:var(--paper)}.page-nav{height:76px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;color:#fff}.page-nav a{color:inherit;text-decoration:none}.page-nav .back{font:12px "DM Mono"}.page-brand{font-size:18px;font-weight:700;letter-spacing:-1px}.page-brand b{color:var(--acid)}.page-hero{padding:72px 9vw 65px;background:var(--ink);color:#fff;position:relative;overflow:hidden}.page-hero:after{content:"";position:absolute;width:55vw;height:55vw;border:1px solid rgba(255,255,255,.2);right:-15vw;top:-30vw;border-radius:50%}.page-hero>*{position:relative;z-index:1}.page-kicker{font:11px "DM Mono";letter-spacing:.1em;color:var(--acid)}.page-hero h1{font-size:clamp(56px,8vw,112px);letter-spacing:-.09em;line-height:.8;margin:20px 0 25px}.page-hero p:not(.page-kicker){font-size:18px;line-height:1.45;max-width:540px}.content{padding:75px 9vw}.course-layout{display:grid;grid-template-columns:1.1fr .9fr;gap:58px}.video-demo{height:320px;background:var(--blue);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}.video-demo:before,.video-demo:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.6);border-radius:50%;width:130%;height:40%;transform:rotate(-25deg)}.video-demo:after{transform:rotate(30deg)}.play{z-index:1;width:85px;height:85px;border:0;border-radius:50%;background:var(--acid);font-size:28px;cursor:pointer;transition:transform .25s}.play:hover{transform:scale(1.1)}.lesson-list{border-top:1px solid var(--ink)}.lesson{display:flex;align-items:center;gap:18px;padding:20px 5px;border-bottom:1px solid #bbb}.lesson .status{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--acid);font-size:12px}.lesson.locked{opacity:.52}.lesson.locked .status{background:#ddd}.lesson small{margin-left:auto;font:10px "DM Mono"}.buy-box{background:var(--pink);padding:34px;margin-top:30px}.buy-box h2,.content h2{font-size:38px;letter-spacing:-.06em;margin:0 0 12px}.buy-box p{line-height:1.45}.purchase{border:0;background:var(--ink);color:#fff;padding:14px 18px;font:600 14px "Space Grotesk";cursor:pointer}.purchase:hover{background:var(--blue)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contest-card{padding:28px;background:#fff;border:1px solid var(--ink);min-height:360px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}.contest-card:hover{transform:translate(-5px,-5px);box-shadow:6px 6px 0 var(--blue)}.contest-card:nth-child(2){background:var(--acid)}.contest-card:nth-child(3){background:var(--pink)}.tag{font:10px "DM Mono";letter-spacing:.08em}.contest-card h2{font-size:36px;line-height:.9;margin:28px 0 12px}.contest-card p{line-height:1.4}.contest-card .button{margin-top:auto;width:max-content}.opportunities{display:grid;grid-template-columns:1fr 1fr;gap:18px}.opportunity{padding:30px;background:#fff;border-top:6px solid var(--blue);display:grid;grid-template-columns:1fr auto;gap:10px}.opportunity:nth-child(2){border-color:var(--pink)}.opportunity:nth-child(3){border-color:var(--orange)}.opportunity h2{font-size:30px;margin:0;letter-spacing:-.05em}.opportunity p{line-height:1.45;margin:0}.apply{align-self:end;background:var(--ink);color:#fff;border:0;padding:11px 15px;cursor:pointer;font:600 13px "Space Grotesk"}.modal{position:fixed;z-index:40;inset:0;background:rgba(23,21,30,.65);display:none;place-items:center;padding:22px}.modal.show{display:grid}.modal-card{background:var(--paper);width:min(500px,100%);padding:38px;position:relative;box-shadow:12px 12px 0 var(--acid)}.modal-card h2{font-size:42px;letter-spacing:-.07em;margin:0 0 15px}.modal-card p{line-height:1.45}.modal-close{position:absolute;right:16px;top:16px;border:0;background:transparent;font-size:24px;cursor:pointer}.form-row{display:grid;gap:7px;margin:16px 0}.form-row label{font:11px "DM Mono"}.form-row input,.form-row select{font:16px "Space Grotesk";padding:12px;border:1px solid var(--ink);background:#fff}.notice{display:none;background:var(--acid);padding:14px;margin-top:16px;font-weight:600}.notice.show{display:block}.step-link{display:block;color:inherit;text-decoration:none}.step-link>span{font-size:13px;font-weight:600;display:inline-block;margin-top:8px;border-bottom:1px solid currentColor;padding-bottom:3px}@media(max-width:760px){.page-nav{padding:0 24px}.page-hero,.content{padding-left:25px;padding-right:25px}.page-hero{padding-top:55px;padding-bottom:55px}.course-layout,.cards,.opportunities{grid-template-columns:1fr}.video-demo{height:260px}.opportunity{grid-template-columns:1fr}.page-hero h1{font-size:62px}}
+.page-shell {
+  min-height: 100vh;
+  background: var(--paper);
+}
+
+.page-nav {
+  height: 76px;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.page-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-nav .back {
+  font: 12px "DM Mono";
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.page-nav .back:hover {
+  transform: translateX(-4px);
+}
+
+.page-brand {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.page-brand b {
+  color: var(--acid);
+}
+
+.page-hero {
+  padding: 72px 9vw 65px;
+  background: var(--ink);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  animation: hero-lift-in 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.page-hero:after {
+  content: "";
+  position: absolute;
+  width: 55vw;
+  height: 55vw;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  right: -15vw;
+  top: -30vw;
+  border-radius: 50%;
+  animation: orbit-spin-slow 30s linear infinite;
+}
+
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-kicker {
+  font: 11px "DM Mono";
+  letter-spacing: 0.1em;
+  color: var(--acid);
+}
+
+.page-hero h1 {
+  font-size: clamp(56px, 8vw, 112px);
+  letter-spacing: -0.09em;
+  line-height: 0.8;
+  margin: 20px 0 25px;
+}
+
+.page-hero p:not(.page-kicker) {
+  font-size: 18px;
+  line-height: 1.45;
+  max-width: 540px;
+}
+
+.content {
+  padding: 75px 9vw;
+}
+
+.course-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 58px;
+}
+
+/* --- VIDEO DEMO CON PULSO --- */
+.video-demo {
+  height: 320px;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(98, 118, 255, 0.25);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.video-demo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 45px rgba(98, 118, 255, 0.35);
+}
+
+.video-demo:before,
+.video-demo:after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 130%;
+  height: 40%;
+  transform: rotate(-25deg);
+  animation: orbit-spin-slow 20s linear infinite;
+}
+
+.video-demo:after {
+  transform: rotate(30deg);
+  animation: orbit-spin-reverse 15s linear infinite;
+}
+
+.play {
+  z-index: 2;
+  width: 85px;
+  height: 85px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--acid);
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(217, 255, 76, 0.6);
+  animation: play-pulse 2.2s infinite;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+}
+
+.play:hover {
+  transform: scale(1.15);
+  background: #fff;
+}
+
+@keyframes play-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 255, 76, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 26px rgba(217, 255, 76, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(217, 255, 76, 0);
+  }
+}
+
+.lesson-list {
+  border-top: 1px solid var(--ink);
+}
+
+.lesson {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 8px;
+  border-bottom: 1px solid #bbb;
+  transition: background-color 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), padding-left 0.25s ease;
+}
+
+.lesson:not(.locked):hover {
+  background-color: rgba(217, 255, 76, 0.2);
+  padding-left: 14px;
+}
+
+.lesson .status {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--acid);
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.lesson:hover .status {
+  transform: scale(1.18);
+}
+
+.lesson.locked {
+  opacity: 0.52;
+}
+
+.lesson.locked .status {
+  background: #ddd;
+}
+
+.lesson small {
+  margin-left: auto;
+  font: 10px "DM Mono";
+}
+
+.buy-box {
+  background: var(--pink);
+  padding: 34px;
+  margin-top: 30px;
+  box-shadow: 10px 10px 0 var(--ink);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.buy-box:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 13px 13px 0 var(--ink);
+}
+
+.buy-box h2,
+.content h2 {
+  font-size: 38px;
+  letter-spacing: -0.06em;
+  margin: 0 0 12px;
+}
+
+.buy-box p {
+  line-height: 1.45;
+}
+
+.purchase {
+  border: 0;
+  background: var(--ink);
+  color: #fff;
+  padding: 14px 18px;
+  font: 600 14px "Space Grotesk";
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, box-shadow 0.25s ease;
+}
+
+.purchase:hover {
+  background: var(--blue);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--acid);
+}
+
+/* --- TARJETAS DE CONCURSOS --- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.contest-card {
+  padding: 28px;
+  background: #fff;
+  border: 1px solid var(--ink);
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contest-card:hover {
+  transform: translate(-6px, -6px);
+  box-shadow: 8px 8px 0 var(--blue);
+}
+
+.contest-card:nth-child(2) {
+  background: var(--acid);
+}
+
+.contest-card:nth-child(2):hover {
+  box-shadow: 8px 8px 0 var(--pink);
+}
+
+.contest-card:nth-child(3) {
+  background: var(--pink);
+}
+
+.contest-card:nth-child(3):hover {
+  box-shadow: 8px 8px 0 var(--acid);
+}
+
+.tag {
+  font: 10px "DM Mono";
+  letter-spacing: 0.08em;
+}
+
+.contest-card h2 {
+  font-size: 36px;
+  line-height: 0.9;
+  margin: 28px 0 12px;
+}
+
+.contest-card p {
+  line-height: 1.4;
+}
+
+.contest-card .button {
+  margin-top: auto;
+  width: max-content;
+}
+
+/* --- TARJETAS DE OPORTUNIDADES --- */
+.opportunities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.opportunity {
+  padding: 30px;
+  background: #fff;
+  border-top: 6px solid var(--blue);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.opportunity:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.opportunity:nth-child(2) {
+  border-color: var(--pink);
+}
+
+.opportunity:nth-child(3) {
+  border-color: var(--orange);
+}
+
+.opportunity h2 {
+  font-size: 30px;
+  margin: 0;
+  letter-spacing: -0.05em;
+}
+
+.opportunity p {
+  line-height: 1.45;
+  margin: 0;
+}
+
+.apply {
+  align-self: end;
+  background: var(--ink);
+  color: #fff;
+  border: 0;
+  padding: 11px 15px;
+  cursor: pointer;
+  font: 600 13px "Space Grotesk";
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+}
+
+.apply:hover {
+  background: var(--pink);
+  transform: translate(-2px, -2px);
+}
+
+/* --- MODALES CON ANIMACIÓN CINEMÁTICA --- */
+.modal {
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(23, 21, 30, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--paper);
+  width: min(500px, 100%);
+  padding: 38px;
+  position: relative;
+  box-shadow: 14px 14px 0 var(--acid);
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+}
+
+.modal.show .modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.modal-card h2 {
+  font-size: 42px;
+  letter-spacing: -0.07em;
+  margin: 0 0 15px;
+}
+
+.modal-card p {
+  line-height: 1.45;
+}
+
+.modal-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: 0;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.modal-close:hover {
+  transform: scale(1.2) rotate(90deg);
+}
+
+.form-row {
+  display: grid;
+  gap: 7px;
+  margin: 16px 0;
+}
+
+.form-row label {
+  font: 11px "DM Mono";
+}
+
+.form-row input,
+.form-row select {
+  font: 16px "Space Grotesk";
+  padding: 12px;
+  border: 1px solid var(--ink);
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-row input:focus,
+.form-row select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgba(98, 118, 255, 0.2);
+}
+
+.notice {
+  display: none;
+  background: var(--acid);
+  padding: 14px;
+  margin-top: 16px;
+  font-weight: 600;
+  animation: fade-slide-up 0.4s ease both;
+}
+
+.notice.show {
+  display: block;
+}
+
+.step-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.step-link > span {
+  font-size: 13px;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 8px;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 3px;
+}
+
+@media (max-width: 760px) {
+  .page-nav {
+    padding: 0 24px;
+  }
+  .page-hero,
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .page-hero {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+  .course-layout,
+  .cards,
+  .opportunities {
+    grid-template-columns: 1fr;
+  }
+  .video-demo {
+    height: 260px;
+  }
+  .opportunity {
+    grid-template-columns: 1fr;
+  }
+  .page-hero h1 {
+    font-size: 62px;
+  }
+}
+
