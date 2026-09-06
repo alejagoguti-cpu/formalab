@@ -95,3 +95,127 @@ if (!reduceMotion) {
   }, { passive: true });
 }
 
+// --- 6. INTERACTIVE CHALLENGES CAROUSEL ---
+document.addEventListener('DOMContentLoaded', () => {
+  const carousel = document.getElementById('challengesCarousel');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.getElementById('carouselPrev');
+  const nextBtn = document.getElementById('carouselNext');
+  const dotsContainer = document.getElementById('carouselDots');
+
+  if (carousel && slides.length > 0) {
+    let currentIndex = 0;
+    let autoplayInterval = null;
+
+    // Crear dots dinámicos
+    dotsContainer.innerHTML = '';
+    slides.forEach((_, idx) => {
+      const dot = document.createElement('button');
+      dot.className = `carousel-dot ${idx === 0 ? 'active' : ''}`;
+      dot.setAttribute('aria-label', `Ir al reto ${idx + 1}`);
+      dot.addEventListener('click', () => goToSlide(idx));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function goToSlide(index) {
+      slides[currentIndex].classList.remove('active');
+      dots[currentIndex].classList.remove('active');
+
+      currentIndex = (index + slides.length) % slides.length;
+
+      slides[currentIndex].classList.add('active');
+      dots[currentIndex].classList.add('active');
+    }
+
+    function nextSlide() {
+      goToSlide(currentIndex + 1);
+    }
+
+    function prevSlide() {
+      goToSlide(currentIndex - 1);
+    }
+
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+    // Autoplay con pausa en hover
+    function startAutoplay() {
+      stopAutoplay();
+      autoplayInterval = setInterval(nextSlide, 4500);
+    }
+
+    function stopAutoplay() {
+      if (autoplayInterval) clearInterval(autoplayInterval);
+    }
+
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+    prevBtn?.addEventListener('mouseenter', stopAutoplay);
+    nextBtn?.addEventListener('mouseenter', stopAutoplay);
+
+    // Soporte táctil / swipe móvil
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoplay();
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 45) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+      startAutoplay();
+    }, { passive: true });
+
+    startAutoplay();
+  }
+
+  // --- 7. ANIMATED METRICS COUNTER ---
+  const statNumbers = document.querySelectorAll('.stat-number');
+  if (statNumbers.length > 0) {
+    let hasAnimated = false;
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !hasAnimated) {
+          hasAnimated = true;
+          statNumbers.forEach((counter) => {
+            const target = parseInt(counter.dataset.target, 10) || 0;
+            const prefix = counter.dataset.prefix || '';
+            const suffix = counter.dataset.suffix || '';
+            const duration = 1600;
+            const startTime = performance.now();
+
+            function updateCount(currentTime) {
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // Ease-out expo
+              const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+              const currentVal = Math.floor(easeProgress * target);
+
+              counter.textContent = `${prefix}${currentVal}${suffix}`;
+
+              if (progress < 1) {
+                requestAnimationFrame(updateCount);
+              } else {
+                counter.textContent = `${prefix}${target}${suffix}`;
+              }
+            }
+            requestAnimationFrame(updateCount);
+          });
+        }
+      });
+    }, { threshold: 0.2 });
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) statsObserver.observe(statsSection);
+  }
+});
+
+

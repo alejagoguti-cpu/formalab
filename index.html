@@ -49,8 +49,22 @@
         <p class="side-note">SCROLL TO<br />EXPLORE <span>↓</span></p>
       </section>
 
+      <!-- TICKER PRINCIPAL INFINITO -->
       <section class="ticker" aria-label="Temas Forma Labs">
-        <div>ARQUITECTURA <b>✦</b> DISEÑO <b>✦</b> TECNOLOGÍA <b>✦</b> COMUNIDAD <b>✦</b> ARQUITECTURA <b>✦</b> DISEÑO <b>✦</b> TECNOLOGÍA <b>✦</b> COMUNIDAD <b>✦</b></div>
+        <div class="ticker-track">
+          <div class="ticker-content">
+            <span>ARQUITECTURA</span> <b>✦</b> <span>DISEÑO</span> <b>✦</b> <span>TECNOLOGÍA</span> <b>✦</b> <span>COMUNIDAD</span> <b>✦</b> <span>INNOVACIÓN</span> <b>✦</b> <span>HÁBITAT</span> <b>✦</b> <span>FUTURO</span> <b>✦</b>
+          </div>
+          <div class="ticker-content" aria-hidden="true">
+            <span>ARQUITECTURA</span> <b>✦</b> <span>DISEÑO</span> <b>✦</b> <span>TECNOLOGÍA</span> <b>✦</b> <span>COMUNIDAD</span> <b>✦</b> <span>INNOVACIÓN</span> <b>✦</b> <span>HÁBITAT</span> <b>✦</b> <span>FUTURO</span> <b>✦</b>
+          </div>
+          <div class="ticker-content" aria-hidden="true">
+            <span>ARQUITECTURA</span> <b>✦</b> <span>DISEÑO</span> <b>✦</b> <span>TECNOLOGÍA</span> <b>✦</b> <span>COMUNIDAD</span> <b>✦</b> <span>INNOVACIÓN</span> <b>✦</b> <span>HÁBITAT</span> <b>✦</b> <span>FUTURO</span> <b>✦</b>
+          </div>
+          <div class="ticker-content" aria-hidden="true">
+            <span>ARQUITECTURA</span> <b>✦</b> <span>DISEÑO</span> <b>✦</b> <span>TECNOLOGÍA</span> <b>✦</b> <span>COMUNIDAD</span> <b>✦</b> <span>INNOVACIÓN</span> <b>✦</b> <span>HÁBITAT</span> <b>✦</b> <span>FUTURO</span> <b>✦</b>
+          </div>
+        </div>
       </section>
 
       <section class="intro section reveal-section" id="como-funciona">
@@ -58,6 +72,28 @@
         <div class="intro-grid">
           <h2>La universidad te da una base.<br /><em>La industria pide más.</em></h2>
           <div><p>El mundo del diseño espacial cambia rápido: nuevas herramientas, IA, visualización, datos y procesos colaborativos. Forma Labs convierte esa brecha en una oportunidad para aprender haciendo.</p><a class="text-link dark" href="#retos">Conoce nuestro método <span>↘</span></a></div>
+        </div>
+      </section>
+
+      <!-- MÉTRICAS EN VIVO -->
+      <section class="stats-section reveal-section" aria-label="Impacto Forma Labs">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number" data-target="500" data-prefix="+">0</span>
+            <p class="stat-label">Talentos Emergentes</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="18" data-suffix="+">0</span>
+            <p class="stat-label">Empresas & Estudios</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="94" data-suffix="%">0</span>
+            <p class="stat-label">Inserción Creativa</p>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="100" data-suffix="%">0</span>
+            <p class="stat-label">Retos Reales</p>
+          </div>
         </div>
       </section>
 
@@ -70,11 +106,107 @@
         </div>
       </section>
 
+      <!-- SECCIÓN 03: CARRUSEL INTERACTIVO DE RETOS -->
       <section class="challenge section reveal-section" id="retos">
-        <p class="section-label">[ 03 — RETO DESTACADO ]</p>
-        <div class="challenge-card">
-          <div class="challenge-copy"><p class="challenge-type">RETO ABIERTO · 2026</p><h2>Reimagina<br />el <em>barrio.</em></h2><p>Diseña una intervención de impacto para transformar espacios cotidianos en lugares de encuentro.</p><div class="challenge-meta"><span>CIUDAD<br /><b>Bogotá, CO</b></span><span>PREMIO<br /><b>Por anunciar</b></span></div><a class="button button-light" href="#sumate">Ver el reto <span>↗</span></a></div>
-          <div class="challenge-shape"><span class="shape-label">OPEN<br />CALL</span><div class="abstract-building"><i></i><i></i><i></i><i></i></div><span class="plus">+</span></div>
+        <div class="challenge-header">
+          <p class="section-label">[ 03 — RETOS & CONCURSOS DESTACADOS ]</p>
+          <div class="carousel-nav-controls">
+            <button class="carousel-btn prev" id="carouselPrev" aria-label="Reto anterior">←</button>
+            <div class="carousel-dots" id="carouselDots" role="tablist"></div>
+            <button class="carousel-btn next" id="carouselNext" aria-label="Reto siguiente">→</button>
+          </div>
+        </div>
+
+        <div class="carousel-container" id="challengesCarousel">
+          <div class="carousel-track">
+            <!-- SLIDE 1 -->
+            <div class="carousel-slide active" data-index="0">
+              <div class="challenge-card card-theme-pink">
+                <div class="challenge-copy">
+                  <div class="challenge-badge"><span class="pulse-dot"></span> CONVOCATORIA ABIERTA · 2026</div>
+                  <h2>Reimagina<br />el <em>barrio.</em></h2>
+                  <p>Diseña una intervención urbana de impacto para transformar espacios cotidianos en lugares de encuentro ciudadano.</p>
+                  <div class="challenge-meta">
+                    <span>CIUDAD<br /><b>Bogotá, CO</b></span>
+                    <span>ENFOQUE<br /><b>Hábitat Urbano</b></span>
+                    <span>PREMIO<br /><b>$ 12,000,000 COP</b></span>
+                  </div>
+                  <a class="button button-light" href="frontend/pages/resuelve.html">Inscribirme al reto <span>↗</span></a>
+                </div>
+                <div class="challenge-shape shape-blue">
+                  <span class="shape-label">RETO 01 / 04</span>
+                  <div class="abstract-building"><i></i><i></i><i></i><i></i></div>
+                  <span class="plus">+</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel-slide" data-index="1">
+              <div class="challenge-card card-theme-acid">
+                <div class="challenge-copy">
+                  <div class="challenge-badge"><span class="pulse-dot"></span> RETO DIGITAL GLOBAL</div>
+                  <h2>La cocina<br />del <em>futuro.</em></h2>
+                  <p>Crea una experiencia doméstica modular, flexible e impulsada por IA para viviendas hipercompactas.</p>
+                  <div class="challenge-meta">
+                    <span>FORMATO<br /><b>100% Remoto</b></span>
+                    <span>ENFOQUE<br /><b>IA & Espacio</b></span>
+                    <span>PREMIO<br /><b>Workstation Pro</b></span>
+                  </div>
+                  <a class="button button-dark" href="frontend/pages/resuelve.html">Ver condiciones <span>↗</span></a>
+                </div>
+                <div class="challenge-shape shape-pink">
+                  <span class="shape-label">RETO 02 / 04</span>
+                  <div class="abstract-building"><i></i><i></i><i></i><i></i></div>
+                  <span class="plus">✦</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel-slide" data-index="2">
+              <div class="challenge-card card-theme-orange">
+                <div class="challenge-copy">
+                  <div class="challenge-badge badge-soon">PRÓXIMAMENTE · NOVIEMBRE</div>
+                  <h2>Materiales<br />con <em>memoria.</em></h2>
+                  <p>Explora nuevas formas de reutilizar residuos industriales y biomateriales en el diseño de interiores sostenible.</p>
+                  <div class="challenge-meta">
+                    <span>CIUDAD<br /><b>Medellín, CO</b></span>
+                    <span>ENFOQUE<br /><b>Biomateriales</b></span>
+                    <span>BECA<br /><b>Mentoría 1 a 1</b></span>
+                  </div>
+                  <a class="button button-light" href="frontend/pages/resuelve.html">Registrar interés <span>↗</span></a>
+                </div>
+                <div class="challenge-shape shape-ink">
+                  <span class="shape-label">RETO 03 / 04</span>
+                  <div class="abstract-building"><i></i><i></i><i></i><i></i></div>
+                  <span class="plus">⌘</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 4 -->
+            <div class="carousel-slide" data-index="3">
+              <div class="challenge-card card-theme-blue">
+                <div class="challenge-copy">
+                  <div class="challenge-badge"><span class="pulse-dot"></span> CONCURSO INTERNACIONAL</div>
+                  <h2>Espacios de<br />trabajo <em>líquidos.</em></h2>
+                  <p>Revoluciona los entornos corporativos con arquitecturas adaptativas que evolucionan en tiempo real.</p>
+                  <div class="challenge-meta">
+                    <span>FORMATO<br /><b>Híbrido</b></span>
+                    <span>ENFOQUE<br /><b>Flex Workplace</b></span>
+                    <span>PREMIO<br /><b>Incubación Pro</b></span>
+                  </div>
+                  <a class="button button-light" href="frontend/pages/resuelve.html">Participar ahora <span>↗</span></a>
+                </div>
+                <div class="challenge-shape shape-acid">
+                  <span class="shape-label">RETO 04 / 04</span>
+                  <div class="abstract-building"><i></i><i></i><i></i><i></i></div>
+                  <span class="plus">✳</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -86,11 +218,29 @@
         </div>
       </section>
 
+      <!-- TICKER SECUNDARIO TECNOLÓGICO -->
+      <section class="ticker ticker-tech" aria-label="Ecosistema de Software y Habilidades">
+        <div class="ticker-track ticker-reverse">
+          <div class="ticker-content">
+            <span>BLENDER</span> <b>✳</b> <span>UNREAL ENGINE 5</span> <b>✳</b> <span>RHINOCEROS + GRASSHOPPER</span> <b>✳</b> <span>MIDJOURNEY AI</span> <b>✳</b> <span>FIGMA SPATIAL</span> <b>✳</b> <span>V-RAY</span> <b>✳</b> <span>STABLE DIFFUSION</span> <b>✳</b>
+          </div>
+          <div class="ticker-content" aria-hidden="true">
+            <span>BLENDER</span> <b>✳</b> <span>UNREAL ENGINE 5</span> <b>✳</b> <span>RHINOCEROS + GRASSHOPPER</span> <b>✳</b> <span>MIDJOURNEY AI</span> <b>✳</b> <span>FIGMA SPATIAL</span> <b>✳</b> <span>V-RAY</span> <b>✳</b> <span>STABLE DIFFUSION</span> <b>✳</b>
+          </div>
+          <div class="ticker-content" aria-hidden="true">
+            <span>BLENDER</span> <b>✳</b> <span>UNREAL ENGINE 5</span> <b>✳</b> <span>RHINOCEROS + GRASSHOPPER</span> <b>✳</b> <span>MIDJOURNEY AI</span> <b>✳</b> <span>FIGMA SPATIAL</span> <b>✳</b> <span>V-RAY</span> <b>✳</b> <span>STABLE DIFFUSION</span> <b>✳</b>
+          </div>
+          <div class="ticker-content" aria-hidden="true">
+            <span>BLENDER</span> <b>✳</b> <span>UNREAL ENGINE 5</span> <b>✳</b> <span>RHINOCEROS + GRASSHOPPER</span> <b>✳</b> <span>MIDJOURNEY AI</span> <b>✳</b> <span>FIGMA SPATIAL</span> <b>✳</b> <span>V-RAY</span> <b>✳</b> <span>STABLE DIFFUSION</span> <b>✳</b>
+          </div>
+        </div>
+      </section>
+
       <section class="final-cta" id="sumate">
         <p class="eyebrow"><span></span> ¿Listo para entrar al laboratorio?</p>
         <h2>La próxima forma<br /><em>empieza contigo.</em></h2>
         <a class="button button-primary" href="mailto:hola@formalabs.co">Sumarme a Forma Labs <span>↗</span></a>
-        <p class="footer-note">FORMA LABS © 2026 &nbsp; / &nbsp; DISEÑADO PARA QUIENES IMAGINAN MÁS ALLÁ</p>
+        <p class="footer-note">FORMA LABS © 2026 &nbsp; / &nbsp; DISEÑADO PARA QUIENES IMAGINAN MÁS ALLÁ &nbsp; / &nbsp; <a href="brand-guidelines.html" style="color: var(--acid); text-decoration: underline; text-underline-offset: 3px;">Brand Guidelines ↗</a></p>
       </section>
     </main>
     <script src="frontend/js/script.js"></script>

@@ -1,0 +1,100 @@
+/* Doodles & Architectural Graphic Accents for Forma Labs */
+
+.cover::before {
+  content: '📐';
+  position: absolute;
+  top: 40px;
+  right: 48vw;
+  font-size: 28px;
+  opacity: 0.25;
+  pointer-events: none;
+  transform: rotate(-15deg);
+}
+
+.cover::after {
+  content: '+ + + + + + + +';
+  position: absolute;
+  bottom: 25px;
+  left: 8vw;
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  color: var(--acid);
+  letter-spacing: 0.35em;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.essence::after {
+  content: '';
+  position: absolute;
+  right: 6vw;
+  top: 80px;
+  width: 140px;
+  height: 140px;
+  border: 1px dashed rgba(23, 21, 30, 0.25);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.manifesto::before {
+  content: '⚡';
+  position: absolute;
+  right: 12vw;
+  bottom: 60px;
+  font-size: 42px;
+  opacity: 0.15;
+  pointer-events: none;
+  transform: rotate(12deg);
+}
+
+.logo-showcase::after {
+  content: '[ FORMA LABS / VECTOR ASSETS V1.0 ]';
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #888;
+}
+
+.swatches article::after {
+  content: 'CLICK TO COPY';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.swatches article:hover::after {
+  opacity: 0.7;
+}
+
+.type-example::after {
+  content: 'Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz 0123456789';
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  opacity: 0.35;
+  margin-top: 30px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.2);
+  padding-top: 20px;
+  word-break: break-all;
+}
+
+.system-grid .shape-card:first-child {
+  border-top: 4px solid var(--pink);
+}
+
+.system-grid .shape-card:nth-child(2) {
+  border-top: 4px solid var(--blue);
+}
+
+.system-grid .shape-card:nth-child(3) {
+  border-top: 4px solid var(--acid);
+}
