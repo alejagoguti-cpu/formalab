@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -21,39 +21,122 @@
       <section class="page-hero">
         <p class="page-kicker">[ CONECTA / 03 ]</p>
         <h1>Tu siguiente<br />paso <em>empieza.</em></h1>
-        <p>Convocatorias seleccionadas para hacer prácticas, recibir mentoría y conectar con equipos que diseñan el futuro del hábitat.</p>
+        <p>Convocatorias seleccionadas con estudios de arquitectura, despachos de diseño y marcas que buscan nuevo talento del hábitat.</p>
       </section>
 
       <main class="content">
-        <p class="section-label">OPORTUNIDADES ACTIVAS</p>
-        <div class="opportunities">
-          <article class="opportunity">
-            <div>
-              <p class="tag">PRÁCTICA · ESTUDIO URBANO</p>
-              <h2>Asistente de diseño urbano</h2>
-              <p>Bogotá · Híbrido · Para estudiantes de últimos semestres.</p>
+        <div class="filter-header">
+          <div>
+            <p class="section-label">[ CONVOCATORIAS & VINCULACIÓN ]</p>
+            <span class="live-pill"><span class="pulse-dot"></span> 4 OPORTUNIDADES ACTIVAS</span>
+          </div>
+          <div class="category-filters" id="connectFilters">
+            <button class="filter-tab active" data-category="all">Todas</button>
+            <button class="filter-tab" data-category="internship">Prácticas</button>
+            <button class="filter-tab" data-category="mentorship">Mentorías 1:1</button>
+            <button class="filter-tab" data-category="job">Empleo</button>
+          </div>
+        </div>
+
+        <div class="opportunities-grid" id="opportunitiesList">
+          <!-- OPORTUNIDAD 01: PRÁCTICA -->
+          <article class="opportunity-card" data-category="internship" data-role="Asistente de Diseño Urbano">
+            <div class="opp-header">
+              <span class="tag tag-open">● PRÁCTICA REMUNERADA</span>
+              <span class="opp-company">Estudio Metrópolis</span>
             </div>
-            <button class="apply" data-modal="#connectModal">Postularme →</button>
+            <h2>Asistente de diseño urbano y espacio público</h2>
+            <p>Participa en proyectos de reactivación urbana, formulación de planes maestros y modelado de espacio público en Bogotá.</p>
+            <div class="opp-meta">
+              <span class="meta-pill">📍 Bogotá · Híbrido</span>
+              <span class="meta-pill">💰 $1,800,000 COP / mes</span>
+              <span class="meta-pill">🎓 Semestre 7+</span>
+            </div>
+            <div class="opp-footer">
+              <span class="opp-status">3 vacantes disponibles</span>
+              <button class="apply btn-apply-opportunity" data-modal="#connectModal" data-role="Asistente de Diseño Urbano">Postularme →</button>
+            </div>
           </article>
 
-          <article class="opportunity">
-            <div>
-              <p class="tag">MENTORÍA · 1 A 1</p>
-              <h2>Portafolio que abre puertas</h2>
-              <p>Una sesión con profesionales para revisar, enfocar y elevar tu portafolio.</p>
+          <!-- OPORTUNIDAD 02: MENTORÍA -->
+          <article class="opportunity-card card-accent-acid" data-category="mentorship" data-role="Mentoría de Portafolio 1:1">
+            <div class="opp-header">
+              <span class="tag tag-open">● MENTORÍA PERSONALIZADA</span>
+              <span class="opp-company">Forma Advisors</span>
             </div>
-            <button class="apply" data-modal="#connectModal">Quiero mentoría →</button>
+            <h2>Portafolio de alto impacto que abre puertas</h2>
+            <p>Sesión intensiva 1 a 1 de 60 minutos con directores creativos para revisar tu portafolio, narrativa visual y CV.</p>
+            <div class="opp-meta">
+              <span class="meta-pill">💻 100% Remoto (Zoom)</span>
+              <span class="meta-pill">⚡ Sesión 1 a 1</span>
+              <span class="meta-pill">✦ Becas Forma Labs</span>
+            </div>
+            <div class="opp-footer">
+              <span class="opp-status">5 cupos semanales</span>
+              <button class="apply btn-apply-opportunity" data-modal="#connectModal" data-role="Mentoría de Portafolio 1:1">Quiero mentoría →</button>
+            </div>
           </article>
 
-          <article class="opportunity">
-            <div>
-              <p class="tag">PRÁCTICA · DISEÑO DE INTERIORES</p>
-              <h2>Diseño y visualización 3D</h2>
-              <p>Medellín · Presencial · Manejo de modelado y renderizado.</p>
+          <!-- OPORTUNIDAD 03: PRÁCTICA -->
+          <article class="opportunity-card" data-category="internship" data-role="Visualizador 3D & Renderista">
+            <div class="opp-header">
+              <span class="tag tag-open">● PRÁCTICA PROFESIONAL</span>
+              <span class="opp-company">Taller Síntesis</span>
             </div>
-            <button class="apply" data-modal="#connectModal">Postularme →</button>
+            <h2>Diseño interior y visualización 3D hiperrealista</h2>
+            <p>Desarrollo de perspectivas arquitectónicas de interiores comerciales, residencial de lujo y dirección de arte visual.</p>
+            <div class="opp-meta">
+              <span class="meta-pill">📍 Medellín · Presencial</span>
+              <span class="meta-pill">💰 $2,100,000 COP / mes</span>
+              <span class="meta-pill">🎨 Blender / 3ds Max</span>
+            </div>
+            <div class="opp-footer">
+              <span class="opp-status">2 vacantes abiertas</span>
+              <button class="apply btn-apply-opportunity" data-modal="#connectModal" data-role="Visualizador 3D & Renderista">Postularme →</button>
+            </div>
+          </article>
+
+          <!-- OPORTUNIDAD 04: EMPLEO -->
+          <article class="opportunity-card card-accent-blue" data-category="job" data-role="Arquitecto Junior BIM">
+            <div class="opp-header">
+              <span class="tag tag-open">● EMPLEO FULL-TIME</span>
+              <span class="opp-company">Spatial AI Lab</span>
+            </div>
+            <h2>Arquitecto Junior / Modelador BIM & IA</h2>
+            <p>Integración de herramientas computacionales, parametrización BIM (Revit/Rhino) y documentación técnica de proyectos sostenibles.</p>
+            <div class="opp-meta">
+              <span class="meta-pill">🌍 Remoto / Híbrido</span>
+              <span class="meta-pill">💰 $3,800,000 COP / mes</span>
+              <span class="meta-pill">💼 Término indefinido</span>
+            </div>
+            <div class="opp-footer">
+              <span class="opp-status">Postulaciones abiertas</span>
+              <button class="apply btn-apply-opportunity" data-modal="#connectModal" data-role="Arquitecto Junior BIM">Postularme →</button>
+            </div>
           </article>
         </div>
+
+        <!-- SECCIÓN DE RED DE ESTUDIOS -->
+        <section class="perks-section">
+          <p class="section-label">[ ¿CÓMO FUNCIONA LA RED CONECTA? ]</p>
+          <div class="perks-grid">
+            <div class="perk-card">
+              <div class="perk-icon">🏢</div>
+              <h3>Estudios Aliados</h3>
+              <p>Conexión directa sin intermediarios con firmas de arquitectura, estudios de interiorismo y desarrolladores.</p>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon">🎯</div>
+              <h3>Filtro por Talento Real</h3>
+              <p>Postula con tus proyectos de Forma Labs y supera los filtros tradicionales de CV plano.</p>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon">🚀</div>
+              <h3>Fast-Track de Contratación</h3>
+              <p>Respuesta garantizada en menos de 7 días hábiles sobre el estado de tu postulación.</p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -61,23 +144,33 @@
     <div class="modal" id="connectModal">
       <div class="modal-card">
         <button class="modal-close" data-close>×</button>
+        <span class="tag-modal">POSTULACIÓN & CONEXIÓN</span>
         <h2>Hagamos conexión</h2>
-        <p>Deja tu contacto y una línea sobre lo que estás buscando. Te enviaremos los siguientes pasos.</p>
-        <form>
+        <p>Deja tu contacto, selecciona tu convocatoria de interés y envíanos tu portafolio para iniciar el proceso.</p>
+        <form id="connectForm">
           <div class="form-row">
-            <label>NOMBRE</label>
-            <input required placeholder="Tu nombre" />
+            <label>NOMBRE COMPLETO</label>
+            <input required name="name" placeholder="Tu nombre" />
           </div>
           <div class="form-row">
-            <label>CORREO</label>
-            <input type="email" required placeholder="tu@email.com" />
+            <label>CORREO ELECTRÓNICO</label>
+            <input type="email" required name="email" placeholder="tu@email.com" />
           </div>
           <div class="form-row">
-            <label>PORTAFOLIO (OPCIONAL)</label>
-            <input placeholder="Enlace a Behance, Drive o web" />
+            <label>CONVOCATORIA O PROGRAMA</label>
+            <select name="role" id="roleSelect">
+              <option value="Asistente de Diseño Urbano">Asistente de diseño urbano (Bogotá · Práctica)</option>
+              <option value="Mentoría de Portafolio 1:1">Mentoría de portafolio 1:1 (Remoto · Advisors)</option>
+              <option value="Visualizador 3D & Renderista">Visualizador 3D & Renderista (Medellín · Práctica)</option>
+              <option value="Arquitecto Junior BIM">Arquitecto Junior / BIM (Remoto · Empleo)</option>
+            </select>
           </div>
-          <button class="purchase" type="submit">Enviar perfil</button>
-          <div class="notice">¡Perfil recibido! Te contactaremos si hay compatibilidad.</div>
+          <div class="form-row">
+            <label>ENLACE A PORTAFOLIO / BEHANCE / LINKEDIN</label>
+            <input name="portfolio" placeholder="https://behance.net/tu-perfil o drive..." />
+          </div>
+          <button class="purchase" type="submit">Enviar postulación →</button>
+          <div class="notice">¡Perfil recibido! Te contactaremos con los siguientes pasos.</div>
         </form>
       </div>
     </div>

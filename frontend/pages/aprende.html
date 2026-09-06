@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -26,76 +26,135 @@
 
       <main class="content">
         <div class="course-layout">
-          <section>
-            <p class="section-label">CURSO DEMO — VISUALIZACIÓN PARA IDEAS ESPACIALES</p>
-            <div class="video-demo">
-              <button class="play" data-modal="#demoModal" aria-label="Ver demo">▶</button>
+          <!-- REPRODUCTOR DEMO INTERACTIVO -->
+          <section class="player-container">
+            <div class="player-header">
+              <p class="section-label">[ DEMO EN VIVO — 12 MINUTOS ]</p>
+              <span class="live-pill"><span class="pulse-dot"></span> ACCESO INMEDIATO</span>
             </div>
-            <p>En 12 minutos conocerás cómo transformar una idea inicial en una propuesta visual lista para comunicar. Sin tarjeta, sin compromiso.</p>
+
+            <div class="video-demo" id="demoVideoBox">
+              <div class="video-overlay" id="videoOverlay">
+                <button class="play" id="playDemoBtn" aria-label="Reproducir lección demo">▶</button>
+                <p class="video-hint">Haz clic para iniciar la clase interactiva</p>
+              </div>
+              <div class="player-simulation" id="playerSimulation">
+                <div class="sim-screen">
+                  <div class="sim-grid"></div>
+                  <div class="sim-model">✦ IA SPATIAL MODELING ✦</div>
+                  <div class="sim-timer" id="simTimer">00:00 / 12:40</div>
+                </div>
+                <div class="sim-controls">
+                  <button class="sim-btn" id="simPlayToggle">❚❚</button>
+                  <div class="sim-progress-bar"><div class="sim-progress-fill" id="simProgressFill"></div></div>
+                  <span class="sim-quality">1080p 60fps</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="demo-description">
+              <h3>Transformación Espacial con IA & Blender</h3>
+              <p>Aprende el flujo de trabajo exacto para convertir un boceto conceptual en una propuesta visual 3D renderizada en tiempo récord, lista para clientes y concursos.</p>
+              <div class="demo-features">
+                <span>✓ Sin tarjeta requerida</span>
+                <span>✓ Archivos fuente incluidos</span>
+                <span>✓ Acceso de por vida</span>
+              </div>
+            </div>
           </section>
 
-          <section>
-            <h2>Tu ruta de aprendizaje</h2>
+          <!-- LISTA DE LECCIONES Y ACCIONES -->
+          <section class="syllabus-container">
+            <h2>Plan de Estudios del Programa</h2>
             <div class="lesson-list">
-              <div class="lesson">
-                <span class="status">✓</span>
-                <span>01 — Introducción al flujo creativo</span>
-                <small>DEMO GRATIS</small>
+              <div class="lesson lesson-active" data-lesson-id="1" data-lesson-title="01 — Introducción al flujo creativo y bocetado rápido">
+                <span class="status">▶</span>
+                <div class="lesson-info">
+                  <span class="lesson-title">01 — Introducción al flujo creativo</span>
+                  <span class="lesson-desc">De la idea abstracta al modelo conceptual</span>
+                </div>
+                <small class="pill-free">DEMO GRATIS</small>
               </div>
-              <div class="lesson locked">
+
+              <div class="lesson locked" data-lesson-id="2" data-lesson-title="02 — IA generativa para explorar 20+ alternativas">
                 <span class="status">🔒</span>
-                <span>02 — IA para explorar alternativas</span>
+                <div class="lesson-info">
+                  <span class="lesson-title">02 — IA para explorar alternativas</span>
+                  <span class="lesson-desc">Prompts espaciales y variaciones de iluminación</span>
+                </div>
                 <small>+ 48 MIN</small>
               </div>
-              <div class="lesson locked">
+
+              <div class="lesson locked" data-lesson-id="3" data-lesson-title="03 — De boceto a visualización fotorrealista">
                 <span class="status">🔒</span>
-                <span>03 — De boceto a visualización</span>
+                <div class="lesson-info">
+                  <span class="lesson-title">03 — De boceto a visualización</span>
+                  <span class="lesson-desc">Materiales, texturas PBR y atmósferas 3D</span>
+                </div>
                 <small>+ 62 MIN</small>
               </div>
-              <div class="lesson locked">
+
+              <div class="lesson locked" data-lesson-id="4" data-lesson-title="04 — Presenta una idea que convence y vende">
                 <span class="status">🔒</span>
-                <span>04 — Presenta una idea que convence</span>
+                <div class="lesson-info">
+                  <span class="lesson-title">04 — Presenta una idea que convence</span>
+                  <span class="lesson-desc">Storytelling arquitectónico y portafolio de impacto</span>
+                </div>
                 <small>+ 41 MIN</small>
               </div>
             </div>
 
             <div class="buy-box">
-              <h2>¿Quieres seguir?</h2>
-              <p>Desbloquea el programa completo, las plantillas y tu certificado de finalización.</p>
-              <button class="purchase" data-modal="#buyModal">Desbloquear curso →</button>
+              <div class="buy-badge">PROGRAMA COMPLETO</div>
+              <h2>¿Quieres el certificado y las plantillas?</h2>
+              <p>Desbloquea las 4 horas de contenido avanzado, librerías de assets 3D, prompts profesionales y acceso a la comunidad privada de Forma Labs.</p>
+              <button class="purchase" data-modal="#buyModal">Desbloquear programa completo →</button>
             </div>
           </section>
         </div>
-      </main>
-    </div>
 
-    <!-- Modal Demo -->
-    <div class="modal" id="demoModal">
-      <div class="modal-card">
-        <button class="modal-close" data-close>×</button>
-        <h2>Demo gratuita</h2>
-        <p>Imagina aquí el video de bienvenida: una introducción breve a la herramienta y al reto creativo. Este espacio puede conectarse después a YouTube, Vimeo o tu plataforma de cursos.</p>
-        <button class="purchase" data-close>Entendido</button>
-      </div>
+        <!-- BENEFICIOS DEL PROGRAMA -->
+        <section class="perks-section">
+          <p class="section-label">[ LO QUE INCLUYE EL PROGRAMA ]</p>
+          <div class="perks-grid">
+            <div class="perk-card">
+              <div class="perk-icon">📦</div>
+              <h3>Librería de Assets 3D</h3>
+              <p>Más de 50 modelos y texturas optimizadas para arquitectura y diseño de interiores.</p>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon">💬</div>
+              <h3>Comunidad & Mentoría</h3>
+              <p>Canales directos de resolución de dudas con profesionales de la industria.</p>
+            </div>
+            <div class="perk-card">
+              <div class="perk-icon">🎓</div>
+              <h3>Certificado Verificado</h3>
+              <p>Aval para enriquecer tu LinkedIn y validar tus nuevas competencias técnicas.</p>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
 
     <!-- Modal Comprar/Desbloquear -->
     <div class="modal" id="buyModal">
       <div class="modal-card">
         <button class="modal-close" data-close>×</button>
-        <h2>Desbloquea tu ruta</h2>
-        <p>Déjanos tus datos y te enviaremos el acceso cuando el programa abra inscripciones.</p>
-        <form>
+        <span class="tag-modal">ACCESO ANTICIPADO</span>
+        <h2 id="modalTitle">Desbloquea tu ruta</h2>
+        <p id="modalDesc">Déjanos tus datos y te enviaremos el acceso exclusivo y las plantillas de descarga cuando abran inscripciones.</p>
+        <form id="courseForm">
           <div class="form-row">
-            <label>NOMBRE</label>
-            <input required placeholder="Tu nombre" />
+            <label>NOMBRE COMPLETO</label>
+            <input required name="name" placeholder="Tu nombre" />
           </div>
           <div class="form-row">
-            <label>CORREO</label>
-            <input type="email" required placeholder="tu@email.com" />
+            <label>CORREO ELECTRÓNICO</label>
+            <input type="email" required name="email" placeholder="tu@email.com" />
           </div>
-          <button class="purchase" type="submit">Quiero recibir acceso</button>
-          <div class="notice">¡Listo! Te avisaremos primero cuando abra el curso.</div>
+          <button class="purchase" type="submit">Quiero recibir acceso prioritario</button>
+          <div class="notice">¡Listo! Te avisaremos de primero con tu cupón de acceso.</div>
         </form>
       </div>
     </div>

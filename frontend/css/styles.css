@@ -487,7 +487,7 @@ h2 em {
 
 .step-card {
   padding: 34px 36px 30px;
-  min-height: 290px;
+  min-height: 330px;
   border-right: 1px solid var(--ink);
   display: flex;
   flex-direction: column;
@@ -495,7 +495,7 @@ h2 em {
   color: var(--ink);
   text-decoration: none;
   position: relative;
-  transition: background-color 0.25s ease;
+  transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
 .step-card:last-child {
@@ -503,17 +503,62 @@ h2 em {
 }
 
 .step-card:hover {
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(255, 255, 255, 0.45);
 }
 
-.number {
-  font: 11px "DM Mono", monospace;
-  margin: 0 0 10px 0;
+.card-aprende:hover {
+  box-shadow: inset 0 -4px 0 var(--blue);
+}
+
+.card-resuelve:hover {
+  box-shadow: inset 0 -4px 0 var(--pink);
+}
+
+.card-conecta:hover {
+  box-shadow: inset 0 -4px 0 var(--orange);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.step-header .number {
+  font: 12px "DM Mono", monospace;
+  margin: 0;
+  font-weight: 700;
+}
+
+.step-badge {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background: rgba(23, 21, 30, 0.1);
+}
+
+.badge-blue {
+  background: rgba(98, 118, 255, 0.2);
+  color: #1a237e;
+}
+
+.badge-pink {
+  background: rgba(255, 79, 163, 0.25);
+  color: #880e4f;
+}
+
+.badge-orange {
+  background: rgba(255, 112, 67, 0.25);
+  color: #bf360c;
 }
 
 .icon {
   font-size: 44px;
-  margin: 20px 0 16px;
+  margin: 16px 0 14px;
   line-height: 1;
 }
 
@@ -534,11 +579,27 @@ h2 em {
 .steps-grid p:not(.number) {
   font-size: 15px;
   line-height: 1.45;
-  max-width: 270px;
-  margin: 0 0 20px 0;
+  margin: 0 0 16px 0;
+  color: var(--ink);
 }
 
-.step-card > span {
+.step-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.step-tags span {
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  padding: 3px 8px;
+  background: rgba(23, 21, 30, 0.07);
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
+
+.step-cta {
   margin-top: auto;
   font-size: 13px;
   font-weight: 600;
@@ -546,6 +607,11 @@ h2 em {
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
   width: max-content;
+  transition: transform 0.2s ease;
+}
+
+.step-card:hover .step-cta {
+  transform: translateX(4px);
 }
 
 /* --- CHALLENGE CAROUSEL --- */

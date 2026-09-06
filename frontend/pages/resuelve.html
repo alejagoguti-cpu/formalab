@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -25,30 +25,78 @@
       </section>
 
       <main class="content">
-        <p class="section-label">CONCURSOS ABIERTOS</p>
-        <div class="cards">
-          <article class="contest-card">
-            <p class="tag">ABIERTO · BOGOTÁ</p>
+        <div class="filter-header">
+          <div>
+            <p class="section-label">[ CONCURSOS Y RETOS ABIERTOS ]</p>
+            <span class="live-pill"><span class="pulse-dot"></span> 4 CONVOCATORIAS ACTIVAS</span>
+          </div>
+          <div class="category-filters" id="challengeFilters">
+            <button class="filter-tab active" data-category="all">Todos</button>
+            <button class="filter-tab" data-category="urban">Hábitat Urbano</button>
+            <button class="filter-tab" data-category="ai">IA & Digital</button>
+            <button class="filter-tab" data-category="bio">Biomateriales</button>
+          </div>
+        </div>
+
+        <div class="cards" id="challengesList">
+          <!-- RETO 01 -->
+          <article class="contest-card" data-category="urban" data-challenge-id="reimagina">
+            <div class="card-top">
+              <span class="tag tag-open">● ABIERTO · BOGOTÁ</span>
+              <span class="prize-badge">$ 12,000,000 COP</span>
+            </div>
             <h2>Reimagina<br />el barrio.</h2>
-            <p>Propón una intervención para activar espacios de encuentro cotidiano.</p>
-            <p class="tag">CIERRA: 30 SEP</p>
-            <button class="button button-primary" data-modal="#applyModal">Inscribirme ↗</button>
+            <p>Propón una intervención de impacto físico para activar espacios de encuentro cotidiano en comunidades urbanas.</p>
+            <div class="contest-details">
+              <span>📅 Cierre: 30 Septiembre</span>
+              <span>👥 Equipos de 1 a 4</span>
+            </div>
+            <button class="button button-primary btn-apply-challenge" data-modal="#applyModal" data-challenge="Reimagina el barrio">Inscribirme al reto ↗</button>
           </article>
 
-          <article class="contest-card">
-            <p class="tag">ABIERTO · DIGITAL</p>
+          <!-- RETO 02 -->
+          <article class="contest-card card-acid" data-category="ai" data-challenge-id="cocina">
+            <div class="card-top">
+              <span class="tag tag-open">● ABIERTO · 100% REMOTO</span>
+              <span class="prize-badge">Workstation Pro</span>
+            </div>
             <h2>La cocina<br />del futuro.</h2>
-            <p>Diseña una experiencia doméstica flexible, inclusiva y conectada.</p>
-            <p class="tag">CIERRA: 15 OCT</p>
-            <button class="button button-primary" data-modal="#applyModal">Inscribirme ↗</button>
+            <p>Diseña una experiencia doméstica flexible, inclusiva y automatizada con IA para microviviendas contemporáneas.</p>
+            <div class="contest-details">
+              <span>📅 Cierre: 15 Octubre</span>
+              <span>⚡ Enfoque IA Generativa</span>
+            </div>
+            <button class="button button-dark btn-apply-challenge" data-modal="#applyModal" data-challenge="La cocina del futuro">Inscribirme al reto ↗</button>
           </article>
 
-          <article class="contest-card">
-            <p class="tag">PRÓXIMAMENTE</p>
+          <!-- RETO 03 -->
+          <article class="contest-card card-pink" data-category="bio" data-challenge-id="materiales">
+            <div class="card-top">
+              <span class="tag tag-soon">PRÓXIMAMENTE · MEDELLÍN</span>
+              <span class="prize-badge">Beca + Incubación</span>
+            </div>
             <h2>Materiales<br />con memoria.</h2>
-            <p>Explora nuevas formas de reutilizar residuos en el diseño de interiores.</p>
-            <p class="tag">ABRE: NOVIEMBRE</p>
-            <button class="button button-primary" data-modal="#applyModal">Quiero enterarme ↗</button>
+            <p>Explora nuevas formas de reutilizar residuos industriales y biomateriales en el diseño de interiores sostenible.</p>
+            <div class="contest-details">
+              <span>📅 Abre: Noviembre 2026</span>
+              <span>🌱 Circularidad</span>
+            </div>
+            <button class="button button-primary btn-apply-challenge" data-modal="#applyModal" data-challenge="Materiales con memoria">Quiero enterarme ↗</button>
+          </article>
+
+          <!-- RETO 04 -->
+          <article class="contest-card card-blue" data-category="urban" data-challenge-id="workplace">
+            <div class="card-top">
+              <span class="tag tag-open">● ABIERTO · GLOBAL</span>
+              <span class="prize-badge">Incubación Pro</span>
+            </div>
+            <h2>Workplace<br />líquido.</h2>
+            <p>Revoluciona los entornos corporativos con arquitecturas adaptativas que evolucionan en tiempo real para trabajo híbrido.</p>
+            <div class="contest-details">
+              <span>📅 Cierre: 01 Diciembre</span>
+              <span>🏢 Flex Architecture</span>
+            </div>
+            <button class="button button-light btn-apply-challenge" data-modal="#applyModal" data-challenge="Workplace líquido">Inscribirme al reto ↗</button>
           </article>
         </div>
       </main>
@@ -58,27 +106,29 @@
     <div class="modal" id="applyModal">
       <div class="modal-card">
         <button class="modal-close" data-close>×</button>
+        <span class="tag-modal">INSCRIPCIÓN DE PROPUESTA</span>
         <h2>Inscríbete al reto</h2>
-        <p>Registra tu interés y recibirás el brief completo, fechas y condiciones de participación.</p>
-        <form>
+        <p>Registra tus datos para recibir el brief oficial, fechas de entrega y bases técnicas del concurso.</p>
+        <form id="challengeForm">
           <div class="form-row">
-            <label>NOMBRE</label>
-            <input required placeholder="Tu nombre" />
+            <label>NOMBRE COMPLETO / REPRESENTANTE</label>
+            <input required name="name" placeholder="Tu nombre o el de tu equipo" />
           </div>
           <div class="form-row">
-            <label>CORREO</label>
-            <input type="email" required placeholder="tu@email.com" />
+            <label>CORREO ELECTRÓNICO</label>
+            <input type="email" required name="email" placeholder="tu@email.com" />
           </div>
           <div class="form-row">
-            <label>RETO</label>
-            <select>
-              <option>Reimagina el barrio</option>
-              <option>La cocina del futuro</option>
-              <option>Materiales con memoria</option>
+            <label>RETO SELECCIONADO</label>
+            <select name="challenge" id="challengeSelect">
+              <option value="Reimagina el barrio">Reimagina el barrio (Bogotá · Hábitat)</option>
+              <option value="La cocina del futuro">La cocina del futuro (Digital · IA)</option>
+              <option value="Materiales con memoria">Materiales con memoria (Medellín · Bio)</option>
+              <option value="Workplace líquido">Workplace líquido (Global · Flex)</option>
             </select>
           </div>
-          <button class="purchase" type="submit">Enviar inscripción</button>
-          <div class="notice">¡Recibimos tu inscripción! El brief llegará a tu correo.</div>
+          <button class="purchase" type="submit">Enviar inscripción al reto</button>
+          <div class="notice">¡Inscripción confirmada! El brief y las bases llegarán a tu correo.</div>
         </form>
       </div>
     </div>

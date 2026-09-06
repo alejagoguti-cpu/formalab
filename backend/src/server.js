@@ -1,4 +1,4 @@
-﻿const http = require('http');
+const http = require('http');
 const fs = require('fs');
 const path = require('path');
 const url = require('url');
@@ -123,5 +123,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(🚀 Servidor Forma Labs corriendo en http://localhost:);
+  console.log(`🚀 Servidor Forma Labs corriendo en http://localhost:${PORT}`);
 });
+
